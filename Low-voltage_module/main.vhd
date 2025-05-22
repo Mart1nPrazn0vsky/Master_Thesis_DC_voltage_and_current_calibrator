@@ -184,7 +184,7 @@ architecture Behavioral of main is
 	--  ---------------------------------------------------------------------------------------------------------------------------------
 	--  | - | - | - | - | - | - | - | - |                                 voltage                                       |   dithering   |
 	--  ---------------------------------------------------------------------------------------------------------------------------------
-	--  voltage    - 20-bit code for DC generation when dithering is OFF, highest 20 bits when dithering is ON
+	--  voltage    - 20-bit code for DAC in DC mode, in DC mode with dithering top 20 bits of code, in AC mode amplitude (max. x80000)
 	--  dithering  - 4 lowest bits of 24-bit code for DC generation when dithering is ON
 	
 	--  register J
