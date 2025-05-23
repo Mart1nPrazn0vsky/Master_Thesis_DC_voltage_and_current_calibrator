@@ -6,8 +6,6 @@ DC mode with standard resolution - 20 bits
 DC mode with increased resolution (dithering) - 24 bits
 AC mode - 20 bits, max. amplitude is x80000
 FPGA is controled via UART line, which writes data into 4 control registers:
-
--- SYSTEM REGISTERS
     
 --  register G
 --  -----------------------------------------------------------------
