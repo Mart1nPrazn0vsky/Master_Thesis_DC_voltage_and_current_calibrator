@@ -229,18 +229,8 @@ void sortReceivedData(void)
 	_delay_ms(50);		//wait for reception of all data
 	
 	while (UART_AvailableBytes() > 0)
-	{		
-		/*i = 0;
-		//read one line ending with "\n\r" or "\r\n"
-		while (UART_AvailableBytes() > 0)
-		{
-			byte = UART_ReadByte();
-			if ((byte == '\n') || (byte == '\r')) {UART_ReadByte(); break;}		//read one more byte and break
-			string[i++] = byte;
-		}
-		string[i] = '\0';*/
-		
-		UART_ReadLine(string);
+	{
+		UART_ReadLine(string);		//read one line
 		
 		//save data into correct register
 		if (string[0] == 'G')
