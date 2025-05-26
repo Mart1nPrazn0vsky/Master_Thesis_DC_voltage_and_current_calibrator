@@ -36,8 +36,8 @@ void UART_SendString(uint8_t *string);
 uint8_t UART_ReadByte(void);
 
 /**
-* @brief - read line of received data ending with '\n', '\n' is removed from string, string ends with '\0'
-* @param string - array to which received line is saved
+* @brief - read line of received data ending with '\n' or '\r'
+* @param string - pointer to string into which is received string saved, '\n' or '\r' is removed from string
 * @returns - nothing
 */
 void UART_ReadLine(uint8_t *string);

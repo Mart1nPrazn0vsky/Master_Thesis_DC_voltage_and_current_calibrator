@@ -96,7 +96,7 @@ void UART_ReadLine(uint8_t *string)
 		while (UART_AvailableBytes() == 0);		//wait until something is available in RX buffer
 		byte = UART_ReadByte();
 		string[i++] = byte;
-	} while(byte != '\n');
+	} while((byte != '\n') && (byte != '\r'));
 	
 	string[i-1] = '\0';		//i-1 to remove '\n' from string
 }

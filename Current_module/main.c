@@ -153,7 +153,7 @@ int main(void)
 	
 	_delay_ms(100);
 	
-	SPI_Transmit32(0);
+	//SPI_Transmit32(0);
 	CCB_InitDAC();							//configure DAC registers
 	//CCB_InitLEDs();
 	initDithTimer();						//init timer interrupt for dithering
@@ -225,13 +225,12 @@ int main(void)
 void sortReceivedData(void)
 {
 	uint8_t string[35];
-	uint8_t i = 0;
 	
 	_delay_ms(50);		//wait for reception of all data
 	
 	while (UART_AvailableBytes() > 0)
 	{		
-		i = 0;
+		/*i = 0;
 		//read one line ending with "\n\r" or "\r\n"
 		while (UART_AvailableBytes() > 0)
 		{
@@ -239,7 +238,9 @@ void sortReceivedData(void)
 			if ((byte == '\n') || (byte == '\r')) {UART_ReadByte(); break;}		//read one more byte and break
 			string[i++] = byte;
 		}
-		string[i] = '\0';
+		string[i] = '\0';*/
+		
+		UART_ReadLine(string);
 		
 		//save data into correct register
 		if (string[0] == 'G')
