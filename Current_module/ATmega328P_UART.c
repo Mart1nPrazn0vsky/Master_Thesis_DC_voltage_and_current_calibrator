@@ -59,13 +59,13 @@ void UART_SendByte(uint8_t c)
 
 void UART_SendString(uint8_t *string)
 {
-	uint16_t i = 0;
+	uint8_t i = 0;
 	
-	do
+	while (string[i] != '\0')
 	{
 		UART_SendByte(string[i]);
 		i++;
-	} while (string[i] != '\0');
+	}
 }
 
 
